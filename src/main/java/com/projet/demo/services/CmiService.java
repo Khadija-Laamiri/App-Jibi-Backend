@@ -12,6 +12,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDateTime;
+import java.util.Date;
 import java.util.Optional;
 
 @Service
@@ -119,12 +120,12 @@ public class CmiService {
         if (client.getPaymentAccount().getAccountBalance() >= amount) {
             doTransaction(creditor, client, amount);
             Operation operation = new Operation();
-            operation.setRefOperation(paymentRequest.getRefOperation());
+            operation.setRef(paymentRequest.getRefOperation());
             operation.setAmount(amount);
             operation.setCreditorName(creditor.getFirstName() + " " + creditor.getLastName());
             operation.setIdCreditor(paymentRequest.getIdCreditor());
             operation.setServiceName(service.getName());
-            operation.setDoItAt(LocalDateTime.now());
+            operation.setDoItAt(new Date());
             operation.setClient(client);
             operationRepository.save(operation);
 

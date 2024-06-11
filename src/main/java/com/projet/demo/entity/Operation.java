@@ -5,7 +5,7 @@ import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @Entity
 @Data
@@ -17,7 +17,7 @@ public class Operation {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    private String refOperation;
+    private String ref;
 
     private double amount;
 
@@ -27,7 +27,7 @@ public class Operation {
 
     private String serviceName;
 
-    private LocalDateTime doItAt;
+    private Date doItAt;
 
     @ManyToOne
     private Client client;

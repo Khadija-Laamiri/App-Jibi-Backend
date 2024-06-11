@@ -5,7 +5,7 @@ import lombok.Builder;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
-import java.time.LocalDateTime;
+import java.util.Date;
 
 @AllArgsConstructor
 @Data
@@ -15,7 +15,7 @@ public class OperationResponse {
 
     private Long id;
 
-    private String refOperation;
+    private String ref;
 
     private String clientName;
 
@@ -25,7 +25,7 @@ public class OperationResponse {
 
     private double amount;
 
-    private LocalDateTime doItAt;
+    private String doItAt;
 
 
 }
