@@ -15,7 +15,6 @@ public class ClientRequest {
     private String lastName;
     private String email;
     private String phoneNumber;
-    private Date birthDate ;
     private String newPassword;
     @ToString.Exclude
     private Role role;
